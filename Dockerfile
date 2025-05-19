@@ -24,6 +24,8 @@ WORKDIR /app
     
 COPY ./stable_hair /app
 
+ENV PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+
 RUN python3.10 -m pip install --upgrade pip
 # Cài Python requirements
 RUN pip3 install -r requirement.txt
