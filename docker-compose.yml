@@ -3,11 +3,11 @@ version: "3.8"
 services:
   wig_stick:
     build: .
-    container_name: Stable-Hair
+    container_name: stable_hair
     ports:
       - "8986:8986"
     volumes:
-      - ./Stable-Hair:/app
+      - ./stable_hair:/app
     environment:
       - CUDA_HOME=/usr/local/cuda
       - NVIDIA_VISIBLE_DEVICES=all
