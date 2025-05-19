@@ -2,9 +2,10 @@ FROM python:3.10-slim
 
 ENV PATH="/usr/local/cuda/bin:${PATH}"
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential cmake git ninja-build ffmpeg gdown \
-    libgl1 unzip wget && \
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends \
+        build-essential cmake git ninja-build ffmpeg \
+        libgl1 unzip wget && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -12,7 +13,7 @@ WORKDIR /app
 # Clone source
 # RUN git clone https://github.com/Phatdat01/stable_hair.git /app
 # RUN gdown https://drive.google.com/uc?id=1GMSSZCb7j5WWd0pnmAcWp2H-Z-MeSIvO -O models.zip
-
+# RUN pip install gdown
 # # Unzip models.zip and move extracted contents to /app/models
 # RUN unzip models.zip -d /tmp/models && \
 #     mkdir -p /app/models && \
