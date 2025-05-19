@@ -1,9 +1,8 @@
-FROM nvidia/cuda:11.8.0-runtime-ubuntu20.04
+FROM python:3.10-slim
 
 ENV PATH="/usr/local/cuda/bin:${PATH}"
 
-RUN apt-get update && apt-get install -y \
-    python3.10 python3-pip \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential cmake git ninja-build ffmpeg gdown \
     libgl1 unzip wget && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
