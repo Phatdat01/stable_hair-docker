@@ -26,7 +26,7 @@ COPY ./stable_hair /app
 
 RUN python3.10 -m pip install --upgrade pip
 # Cài Python requirements
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirement.txt
 
 # Cổng mặc định
 EXPOSE 8986
